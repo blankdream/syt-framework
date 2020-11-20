@@ -6,13 +6,12 @@ use Yaf\{Application, Bootstrap_Abstract, Dispatcher, Loader, Registry};
 class Bootstrap extends Bootstrap_Abstract{
 
     public function _initConfig(Dispatcher $dispatcher) {
-		//关闭视图渲染
-		$dispatcher->disableView();
-		
+		//开启视图渲染
+		//$dispatcher->enableView();
 		//把配置保存起来
-		$arrConfig = Application::app()->getConfig();
-		Registry::set('config', $arrConfig);
-		//print_r(Application::app()->getConfig()->router->notHttp);die;
+		$config = Application::app()->getConfig();
+		Registry::set('config', $config);
+		
 	}
 
 	public function _initPlugin(Dispatcher $dispatcher) {
